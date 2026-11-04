@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>fitOS · Spotify</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font: 17px/1.45 -apple-system, system-ui, sans-serif; background: #141518; color: #f3f3f6; }
+  @media (prefers-color-scheme: light) { body { background: #f8f7fc; color: #323137; } }
+  p { max-width: 380px; margin: 20px; text-align: center; opacity: .85; }
+</style>
+</head>
+<body>
+<p id="msg">A voltar ao fitOS… / Returning to fitOS…</p>
+<script>
+  // Spotify's redirect URI must be https (or a loopback IP), and fitos-server lives on the home
+  // LAN over http. Spotify sends the phone here; this page hands the result to fitos-server.
+  // It only ever forwards to FITOS (no open redirect) and only these three parameters. The code
+  // is useless without the PKCE verifier, which never leaves fitos-server.
+  var FITOS = 'http://10.0.10.10:7210'; // ← fitos-server on your LAN
+  var q = new URLSearchParams(location.search);
+  var out = new URLSearchParams();
+  ['code', 'state', 'error'].forEach(function (k) { var v = q.get(k); if (v && v.length < 1200) out.set(k, v); });
+  if (out.has('state')) location.replace(FITOS + '/link/spotify/callback?' + out.toString());
+  else document.getElementById('msg').textContent = 'Nada para fazer aqui. / Nothing to do here.';
+</script>
+</body>
+</html>

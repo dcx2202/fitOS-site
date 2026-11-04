@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>fitOS · Privacy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 17px/1.55 -apple-system, system-ui, sans-serif; background: #141518; color: #f3f3f6; }
+  @media (prefers-color-scheme: light) { body { background: #f8f7fc; color: #323137; } }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 24px; } a { color: #8b7cf6; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy policy</h1>
+  <p><i>fitOS, a private household treadmill interface. Last updated: 4 November 2026.</i></p>
+
+  <h2>Who uses it</h2>
+  <p>Only the members of one household, on their own treadmill. There are no public accounts.</p>
+
+  <h2>What data fitOS uses</h2>
+  <ul>
+    <li><b>Google / YouTube</b> (scope <code>youtube.readonly</code>): the linked person's channel
+    name, subscriptions, playlists and liked videos, to show them on the treadmill.</li>
+    <li><b>Spotify</b>: the linked person's display name, playlists, Liked Songs, recently played
+    tracks, current playback and queue; and, on request, playback commands (play, pause, skip,
+    seek, volume, choosing a device).</li>
+  </ul>
+
+  <h2>Where it is kept</h2>
+  <p>Access is kept as OAuth refresh tokens on the household's own server at home, one per person
+  who linked an account. They are never sent to the treadmill screen, never logged, and never
+  shared with anyone. Content fetched from Google or Spotify is shown on the treadmill and kept
+  only in short-lived memory caches. Nothing is sold, shared, or used for advertising.</p>
+
+  <h2>Your choices</h2>
+  <p>Unlink at any time on the treadmill (Settings → Accounts), which deletes the stored token.
+  You can also remove access from your
+  <a href="https://myaccount.google.com/permissions">Google account</a> or your
+  <a href="https://www.spotify.com/account/apps/">Spotify account</a>.</p>
+
+  <h2>Contact</h2>
+  <p>The household member who runs the fitOS server. Use the GitHub account hosting this page.</p>
+  <p><a href="index.html">fitOS</a></p>
+</main>
+</body>
+</html>
