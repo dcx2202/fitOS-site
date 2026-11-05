@@ -6,6 +6,9 @@ A tiny static site that fitOS needs on the public internet:
   loopback) redirects and fitos-server is plain http on the LAN, so Spotify sends the phone here
   and the page forwards `code` / `state` / `error` to fitos-server. Edit `FITOS` in
   `spotify/index.html` if the server isn't at `http://10.0.10.10:7210`.
+- `fitbit/` — the same bounce for Google's sign-in when linking Fitbit (Google Health API).
+  Google web clients also need an https redirect. Edit `FITOS` in `fitbit/index.html` too.
+  Redirect URI: `https://<you>.github.io/fitos/fitbit/`. See docs/research/fitbit.md.
 - `index.html`, `privacy.html`, `pt.html` — the public home and privacy pages Google asks for
   before the YouTube OAuth app can be published.
 

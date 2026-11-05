@@ -14,7 +14,7 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p><i>fitOS, a private household treadmill interface. Last updated: 4 November 2026.</i></p>
+  <p><i>fitOS, a private household treadmill interface. Last updated: 5 November 2026.</i></p>
 
   <h2>Who uses it</h2>
   <p>Only the members of one household, on their own treadmill. There are no public accounts.</p>
@@ -26,6 +26,16 @@
     <li><b>Spotify</b>: the linked person's display name, playlists, Liked Songs, recently played
     tracks, current playback and queue; and, on request, playback commands (play, pause, skip,
     seek, volume, choosing a device).</li>
+    <li><b>Fitbit / Google Health</b> (Google Health API scopes
+    <code>googlehealth.activity_and_fitness.readonly</code> and <code>.writeonly</code>,
+    <code>googlehealth.sleep.readonly</code>, <code>googlehealth.health_metrics_and_measurements.readonly</code>):
+    the linked person's daily sleep (duration and stages), resting heart rate, heart rate
+    variability, SpO2, breathing rate and steps, and the times and types of their exercises (only
+    to avoid logging the same run twice). If the person turns it on, each treadmill run is added
+    to their Google Health record (type, start, duration, distance, calories, average heart rate).
+    The daily values are stored on the household's server, attached to that person, to compute
+    their recovery and strain on the treadmill. They are never shared, sold, used for advertising
+    or used to train models, and are deleted when the person unlinks (or on request).</li>
   </ul>
 
   <h2>Where it is kept</h2>
@@ -38,7 +48,8 @@
   <p>Unlink at any time on the treadmill (Settings → Accounts), which deletes the stored token.
   You can also remove access from your
   <a href="https://myaccount.google.com/permissions">Google account</a> or your
-  <a href="https://www.spotify.com/account/apps/">Spotify account</a>.</p>
+  <a href="https://www.spotify.com/account/apps/">Spotify account</a>. Unlinking Fitbit also
+  revokes fitOS's access at Google and deletes the health values that came from it.</p>
 
   <h2>Contact</h2>
   <p>The household member who runs the fitOS server. Use the GitHub account hosting this page.</p>
